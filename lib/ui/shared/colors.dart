@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+Color tealColor1B = const Color(0xFF1BAEA6);
+Color tealColorB2 = const Color(0xFFB2EAE7);
+Color tealColor60 = const Color(0xFF60D2CE).withOpacity(0.6);
+Color tealColorD6 = const Color(0xFFD6F2F1);
+Color teal10Color60 = const Color(0xFF60D2CE).withOpacity(0.1);
+Color teal40Color60 = const Color(0xFF60D2CE).withOpacity(0.40);
+Color teal10Color1B = const Color(0xFF1BAEA6).withOpacity(0.10);
+Color blackColor00  = const Color(0xFF000000);
+Color whiteColorFF  = const Color(0xFFFFFFFF);
+Color greyColorD9 = const Color(0xFFD9D9D9);
+Color grey05Color = const Color(0xFF000000).withOpacity(0.05);
+Color grey40Color = const Color(0xFF000000).withOpacity(0.40);
+Color greyColor58 = const Color(0xFF585757);
+Color black50Color00 = const Color(0xFF000000).withOpacity(0.5);
+Color black10Color00 = const Color(0xFF000000).withOpacity(0.1);
+Color blueColor52 = const Color(0xFF5299DA).withOpacity(0.36);
+Color blueColor = const Color(0xFF529ADA);
+Color pink42ColorEE = const Color(0xFFEE9DD7).withOpacity(0.42);
+Color pinkColorEE = const Color(0xFFEE9DD8);
+Color blueColor8F = const Color(0xFF8FB6F1);
