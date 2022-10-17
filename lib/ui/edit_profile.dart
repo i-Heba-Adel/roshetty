@@ -44,7 +44,7 @@ class EditProfile extends StatelessWidget {
                       backgroundColor: whiteColorFF,
                       radius: 39,
                       child: Image(
-                        image: AssetImage('assets/images/user.png'),
+                        image: AssetImage('assets/images/user_image.png'),
                       ),
                     ),
                   ),
@@ -66,29 +66,146 @@ class EditProfile extends StatelessWidget {
                         color: greyColor58
                     ),
                   ),
-                  Form(
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(35),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0 , horizontal: 20),
+                    child: Form(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Name',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return 'Invalid Name';
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
                             ),
-                            label: Text('First Name',),
-                            prefixIcon: Icon(Icons.person),
                           ),
-                          keyboardType: TextInputType.text,
-                          validator: (value){
-                            if(value!.isEmpty){
-                              return 'Invalid Name';
-                            }
-                            return null;
-                          },
-                          onSaved: (value){
-                            
-                          },
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Email',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return 'Invalid Email';
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Password',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return 'Invalid Password';
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Confirem Password',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return 'Not Match';
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Date of birth',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return "Can't be NULL";
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                label: Text('Address',),
+                              ),
+                              keyboardType: TextInputType.text,
+                              validator: (value){
+                                if(value!.isEmpty){
+                                  return "Can't be NULL";
+                                }
+                                return null;
+                              },
+                              onSaved: (value){
+
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ClipPath(
+                    clipper: WaveClipperTwo(reverse: true),
+                    child: Container(
+                      height: 120,
+                      color: tealColor60,
                     ),
                   ),
                 ],

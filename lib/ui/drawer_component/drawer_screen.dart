@@ -4,20 +4,23 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:roshetty/ui/drawer_component/drawer_header.dart';
 import 'package:roshetty/ui/edit_profile.dart';
+import 'package:roshetty/ui/main_screen.dart';
+import 'package:roshetty/ui/language_screen.dart';
+import 'package:roshetty/ui/search_screen.dart';
 import 'package:roshetty/ui/shared/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roshetty/ui/shared/container_in_home_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class DrawerScreen extends StatefulWidget {
+  const DrawerScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DrawerScreenState extends State<DrawerScreen> {
 
-  var currentPage = DrawerSections.profile;
+  var currentPage = DrawerSections.home;
   bool selectHome = true;
   bool selectBones = false;
   bool selectImmunity = false;
@@ -26,15 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    var container ;
-    if(currentPage == DrawerSections.home){
-      container = HomeScreen();
-    }else if(currentPage == DrawerSections.profile){
-      container = EditProfile();
-    }
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: whiteColorFF,
@@ -43,7 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           backgroundColor: tealColor1B.withOpacity(0.8),
           elevation: 0,
-          // backgroundColor: whiteColorFF,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2.0),
+              child: IconButton(
+                onPressed: (){
+                  Navigator.push(
+                    context , MaterialPageRoute(
+                    builder: (context)=> SearchScreen()
+                  )
+                  );
+                },
+                icon: Icon(Icons.search),
+              ),
+            ),
+          ],
         ),
         drawer: Drawer(
           child: SingleChildScrollView(
@@ -57,61 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        body: container,
-        bottomNavigationBar: Container(
-          height: 64,
-          color: Colors.white,
-          child: Stack(
-            children: [
-              Center(
-                heightFactor: 0.5,
-                child: FloatingActionButton(
-                    onPressed: (){},
-                    backgroundColor: tealColor1B,
-                    child: SvgPicture.asset(
-                        'assets/svgs/house_door_fill.svg'
-                    )
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconButton(
-                    onPressed: (){
-                    },
-                    icon: SvgPicture.asset(
-                        'assets/svgs/capsule.svg'
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: (){
-                    },
-                    icon: SvgPicture.asset(
-                        'assets/svgs/qr_code_scan.svg'
-                    ),
-                  ),
-                  SizedBox(
-                    width: size.width * 0.16,
-                  ),
-                  IconButton(
-                    onPressed: (){
-
-                    },
-                    icon: SvgPicture.asset(
-                        'assets/svgs/chat_text.svg'
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: (){},
-                    icon: SvgPicture.asset(
-                        'assets/svgs/people.svg'
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+        body: MainScreen(),
       ),
     );
   }
@@ -123,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: EdgeInsets.only(top: 15),
       child: Column(
         children: [
-          menuItems(0 , 'Home' , Icon(Icons.home_outlined , color: tealColor1B,) , currentPage == DrawerSections.home? true : false ),
           menuItems(1 , 'Profile' , SvgPicture.asset('assets/svgs/person_fill.svg') , currentPage == DrawerSections.profile? true : false ),
           menuItems(2 , 'Language' , SvgPicture.asset('assets/svgs/globe.svg') , currentPage == DrawerSections.language? true : false),
           menuItems(3 , 'Payment' , SvgPicture.asset('assets/svgs/credit_card_2_front_fill.svg') , currentPage == DrawerSections.payment? true : false),
@@ -147,12 +100,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return Material(
       child: InkWell(
         onTap: (){
-          Navigator.pop(context);
           setState(() {
             if(id == 1){
               currentPage = DrawerSections.profile;
+              Navigator.push(
+                context , MaterialPageRoute(
+                builder: (context) => EditProfile()
+              )
+              );
             }else if(id == 2) {
               currentPage = DrawerSections.language;
+              Navigator.push(
+                context , MaterialPageRoute(
+                builder: (context) => LanguageScreen()
+              )
+              );
             }else if(id == 3) {
               currentPage = DrawerSections.payment;
             }else if(id == 4) {

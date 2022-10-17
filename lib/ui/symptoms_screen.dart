@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({Key? key}) : super(key: key);
+class SymptomsScreen extends StatelessWidget {
+  const SymptomsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ChatScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'Chat Screen'
+                'Symptoms Screen'
             ),
             MaterialButton(
               color: Colors.blueAccent,

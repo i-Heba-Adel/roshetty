@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({Key? key}) : super(key: key);
+class LanguageScreen extends StatelessWidget {
+  const LanguageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class ChatScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'Chat Screen'
+              'Language Screen'
             ),
             MaterialButton(
               color: Colors.blueAccent,
               onPressed: (){
                 Navigator.pop(
-                    context
+                  context
                 );
               },
             ),

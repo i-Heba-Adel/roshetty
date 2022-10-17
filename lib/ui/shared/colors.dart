@@ -15,6 +15,7 @@ Color grey40Color = const Color(0xFF000000).withOpacity(0.40);
 Color greyColor58 = const Color(0xFF585757);
 Color black50Color00 = const Color(0xFF000000).withOpacity(0.5);
 Color black10Color00 = const Color(0xFF000000).withOpacity(0.1);
+Color black05Color00 = const Color(0xFF000000).withOpacity(0.05);
 Color blueColor52 = const Color(0xFF5299DA).withOpacity(0.36);
 Color blueColor = const Color(0xFF529ADA);
 Color pink42ColorEE = const Color(0xFFEE9DD7).withOpacity(0.42);
